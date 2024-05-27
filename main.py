@@ -5,28 +5,31 @@ words = ['elite','event','cats','deep','smooth','ring','clear','drawer']
 
 number = int(random.random()*len(words))
 userinput = 'w'
-
 guessed = []
+won=False
 
 def pickword():
-    pickword()
     pickedword = words[number]
     return pickedword
 def dash():
+    pickword()
     count = 0
     for x in range(0,len(pickword())):
         guessed.append('_')
-
+def full():
+    count=0
+    for x in range(0,len(pickword())):
+        if(guessed[x]!='_'):
+            count+=1
+    return count
 dash()
 print(pickword())
 print(guessed)
-
-
 def check():
+    global won
     chances=0
     while(chances<6):
-       userinput = input("guess a character")
-       
+       userinput = input("guess a character: ")     
        count=0
        for x in range(0,len(pickword())):
           if(pickword()[x]==userinput):
@@ -35,5 +38,14 @@ def check():
               count+=1
        if(count==len(pickword())):
            chances+=1
-       print(f'{guessed} chances: {6-chances}')   
+       if(full()==len(pickword())):
+           print(f'{guessed} chances: {6-chances}')
+           chances=6
+           won=True
+       print(f'{guessed} chances: {6-chances}')
+    return chances   
 check()
+if(won):
+    print("you won!")
+else:
+    print("you lost")
