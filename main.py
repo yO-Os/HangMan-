@@ -26,7 +26,7 @@ def dash():
 print(dash())
 
 userinput = input("guess a character")
-chances=0;
+chances=0
 def check():
     picked_word=''
     letter=''
