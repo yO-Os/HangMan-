@@ -9,6 +9,7 @@ userinput = 'w'
 guessed = []
 
 def pickword():
+    pickword()
     pickedword = words[number]
     return pickedword
 def dash():
