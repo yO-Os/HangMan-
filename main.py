@@ -20,3 +20,11 @@ def dash():
 print(dash())
 
 userinput = input("guess a character")
+chances=0;
+def check():
+    picked_word=''
+    letter=''
+    while(chances<6):
+       latter=input("Enter a character")
+        
+        
