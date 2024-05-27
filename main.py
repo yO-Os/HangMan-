@@ -23,7 +23,6 @@ def full():
             count+=1
     return count
 dash()
-print(pickword())
 print(guessed)
 def check():
     global won
