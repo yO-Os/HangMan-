@@ -20,11 +20,19 @@ def dash():
 print(dash())
 
 userinput = input("guess a character")
-chances=0;
+chances=0
+count=0
 def check():
-    picked_word=''
-    letter=''
     while(chances<6):
-       latter=input("Enter a character")
+       userinput = input("guess a character")
+       count=0
+       for x in range(0,len(pickword())):
+          if(pickword()[x]==userinput):
+              guessed[x]=userinput
+              break
+          else:
+              count+=1
+       if(count==len(pickword())):
+           chances+=1
         
         
